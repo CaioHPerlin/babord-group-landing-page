@@ -34,7 +34,7 @@ O principal objetivo deste trabalho é replicar a landing page original, mantend
 # ▶️ Instrução para Desenvolvimeto
 1- Clonar repositório
 ```bash
-git clone https://github.com/CaioHPerlin/the-keyboard-store
+git clone https://github.com/CaioHPerlin/babord-group-landing-page
 ```
 2 - instalar dependências
 
