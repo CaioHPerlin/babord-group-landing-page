@@ -36,7 +36,7 @@ O principal objetivo deste trabalho é replicar a landing page original, mantend
 ```bash
 git clone https://github.com/CaioHPerlin/babord-group-landing-page
 ```
-2 - instalar dependência
+2 - instalar dependências
 
  ```
  pnpm i 
