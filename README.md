@@ -12,7 +12,7 @@ O principal objetivo deste trabalho é replicar a landing page original, mantend
 
 *- Praticar Design Responsivo*
 
-*- Praticar colaboração e versionamento de codigo* 
+*- Praticar colaboração e versionamento de código* 
 
 # 💻 Tecnologias Utilizadas
 
@@ -31,12 +31,12 @@ O principal objetivo deste trabalho é replicar a landing page original, mantend
 .
 
 
-# ▶️ Instrução para Desenvolvimeto
+# ▶️ Instrução para Desenvolvimento
 1- Clonar repositório
 ```bash
 git clone https://github.com/CaioHPerlin/babord-group-landing-page
 ```
-2 - instalar dependências
+2 - instalar dependência
 
  ```
  pnpm i 
