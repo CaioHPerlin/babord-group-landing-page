@@ -1,24 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# 📑Recriação da Landing Page - Babord Group
 
-First, run the development server:
+Este projeto tem como objetivo a recriação da página inicial (landing page) do site Babord Group. O site original pode ser acessado [aqui](https://babordgroup.com/)
+. A recriação visa melhorar a experiência do usuário, otimizar o design para diferentes dispositivos e plataformas, além de implementar novas funcionalidades e melhorias de performance.
 
+#  🎯 Objetivo
+
+O principal objetivo deste trabalho é replicar a landing page original, mantendo os elementos de identidade visual e usabilidade, com o intuito  de:
+
+*- Desenvolver uma landing page com next.js* 
+
+*- Praticar Design Responsivo*
+
+*- Praticar colaboração e versionamento de codigo* 
+
+# 💻 Tecnologias Utilizadas
+
+1. Next.js: Framework para React com foco em otimização e desenvolvimento de páginas estáticas e dinâmicas.
+
+2. React.js: Biblioteca para construir componentes reutilizáveis e dinâmicos.
+
+3. CSS3: Para estilização e design responsivo da página.
+
+4. Node.js: Para gerenciar dependências e servir o aplicativo.
+
+5. Pnpm: gerenciador de pacotes para projetos Node.js que funciona como uma alternativa mais rápida e eficiente 
+
+#  🏣 Estrutura do Projeto
+
+.
+
+
+# ▶️ Instrução para Desenvolvimeto
+1- Clonar repositório
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/CaioHPerlin/the-keyboard-store
+```
+2 - instalar dependências
+
+ ```
+ pnpm i 
+ ```
+ou
+ ```
+ npm i
+  ```
+ou
+  ```
+  yarn install
+  ```
+3 - Iniciar o Projeto
+
+```
+Pnpm start
+```
+ou
+```
+npm start
+```
+ou
+```
+yarn start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Autores
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [Caio Hygino Perlim de Lima](https://github.com/CaioHPerlin)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [Caio Loyer](https://github.com/CaioLoyer)
+
+- [Murilo de Toledo Vieira](https://github.com/Shishura)
 
 ## Learn More
 
@@ -29,8 +80,4 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
