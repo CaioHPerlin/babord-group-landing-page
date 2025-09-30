@@ -1,5 +1,25 @@
+import localFont from "next/font/local";
 import type { Metadata } from "next";
 import "./globals.css";
+
+const bluuSuperstarFont = localFont({
+   src: [
+    {
+      path: './assets/fonts/bluu-superstar/BluuSuuperstarRegular.ttf',
+      weight: '400',
+    },
+    {
+      path: './assets/fonts/bluu-superstar/BluuSuuperstarBold.ttf',
+      weight: '600',
+    },
+    {
+      path: './assets/fonts/bluu-superstar/BluuSuuperstarBlack.ttf',
+      weight: '700',
+    },
+  ],
+  variable: "--font-bluu",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={``}>
+      <body className={`${bluuSuperstarFont.variable}`}>
         {children}
       </body>
     </html>
