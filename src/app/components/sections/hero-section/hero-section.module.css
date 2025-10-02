@@ -1,9 +1,3 @@
-.heroSectionWrapper{
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-}
-
 .heroSection {
     display: flex;
     align-items: center;
@@ -45,10 +39,15 @@
 .videoWrapper{
     height: 100%;
     width: 100%;
-    -webkit-transform: scale(1.1);
     transform: scale(1.1);
+    transform-origin: center center;
     overflow: hidden;
     position: absolute;
-    top: 0;
-    z-index: 0;
+    z-index: -10;
+}
+
+.videoWrapper video{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
