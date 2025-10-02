@@ -1,0 +1,17 @@
+.productsSectionWrapper {
+    background-color: var(--background-primary);
+}
+
+.productsSection {
+    max-width: 1640px;
+    margin: 0 auto;
+}
+
+.productsSection h1 {
+    font-family: var(--font-bluu);
+    font-size: 15px;
+  font-weight: bold;
+  color: #E5F0E6;
+  position: absolute;
+  top: 55px;
+}
