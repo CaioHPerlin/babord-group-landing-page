@@ -6,5 +6,5 @@ interface SectionWrapperProps {
 }
 
 export default function SectionWrapper({ children, className }: SectionWrapperProps) {
-	return <div className={`${style.sectionWrapper} ${className}`}>{children}</div>;
+	return <div className={`${style.sectionWrapper}${className ? ` ${className}` : ""}`}>{children}</div>;
 }
