@@ -4,7 +4,9 @@ import style from "./products-section.module.css";
 export default function ProductsSection() {
 	return (
 		<SectionWrapper className={style.productsSectionWrapper}>
-			<section className={style.productsSection}></section>
+			<section className={style.productsSection}>
+				<h1>Products</h1>
+			</section>
 		</SectionWrapper>
 	);
 }

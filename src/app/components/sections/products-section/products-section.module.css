@@ -1,17 +1,29 @@
 .productsSectionWrapper {
-    background-color: var(--background-primary);
+	background-color: var(--background-primary);
 }
 
 .productsSection {
-    max-width: 1640px;
-    margin: 0 auto;
+	max-width: 1640px;
+	margin: 0 auto;
+	height: 100%;
+	padding-top: 100px;
+	padding-bottom: 80px;
+	display: flex;
+	align-items: center;
 }
 
 .productsSection h1 {
-    font-family: var(--font-bluu);
-    font-size: 15px;
-  font-weight: bold;
-  color: #E5F0E6;
-  position: absolute;
-  top: 55px;
+	font-family: var(--font-bluu);
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--background-light);
+	position: absolute;
+	top: 55px;
+}
+
+@media print, screen and (min-width: 75em) {
+	.productsSection {
+		padding-right: 1.0416666667rem;
+		padding-left: 1.0416666667rem;
+	}
 }
