@@ -12,6 +12,13 @@
 	align-items: center;
 }
 
+@media print, screen and (min-width: 75em) {
+	.productsSection {
+		padding-right: 1.0416666667rem;
+		padding-left: 1.0416666667rem;
+	}
+}
+
 .productsSection h1 {
 	font-family: var(--font-bluu);
 	font-size: 15px;
@@ -19,11 +26,4 @@
 	color: var(--background-light);
 	position: absolute;
 	top: 55px;
-}
-
-@media print, screen and (min-width: 75em) {
-	.productsSection {
-		padding-right: 1.0416666667rem;
-		padding-left: 1.0416666667rem;
-	}
 }
