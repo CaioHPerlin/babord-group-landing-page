@@ -10,7 +10,7 @@ export default function HamburguerMenu() {
 				alt="logo"
 				width={900}
 				height={200}
-				style={{ width: "55px", height: "auto" }}
+				style={{ width: "50px", height: "auto" }}
 			/>
 			<Image
 				className={style.hamburguerIcon}
@@ -26,7 +26,7 @@ export default function HamburguerMenu() {
 				alt="footer"
 				width={400}
 				height={400}
-				style={{ width: "100px", height: "auto" }}
+				style={{ width: "110px", height: "auto" }}
 			/>
 		</header>
 	);
