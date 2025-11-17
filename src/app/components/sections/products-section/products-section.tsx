@@ -76,7 +76,7 @@ function ProductCard({ slug, title, image, alt, description }: ProductCardProps)
 	const href = `#products/${slug}`;
 
 	return (
-		<li>
+		<li className={style.productCard}>
 			<Link href={href} aria-label={`Open product ${title}`}>
 				<h2>{title}</h2>
 				<div className={style.productImageWrapper}>
