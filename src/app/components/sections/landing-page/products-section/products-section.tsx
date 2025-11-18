@@ -1,3 +1,5 @@
+"use client";
+
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import SectionWrapper from "../../../section-wrapper/section-wrapper";
@@ -7,8 +9,10 @@ import product1Image from "@/app/assets/images/products-section/product-1.jpg";
 import product2Image from "@/app/assets/images/products-section/product-2.jpg";
 import product3Image from "@/app/assets/images/products-section/product-3.jpg";
 import product4Image from "@/app/assets/images/products-section/product-4.jpg";
+import { useRef, useState } from "react";
+import { useHover } from "@/app/hooks/use-hover";
 
-const productCards: ProductCardProps[] = [
+const productCards: Omit<ProductCardProps, "index">[] = [
 	{
 		title: "White fish",
 		slug: "cod",
@@ -48,9 +52,10 @@ export function ProductsSection() {
 			<section className={style.productsSection}>
 				<h1>Products</h1>
 				<ul>
-					{productCards.map((productCard) => (
+					{productCards.map((productCard, index) => (
 						<ProductCard
-							key={productCard.slug}
+							key={index}
+							index={index + 1}
 							slug={productCard.slug}
 							title={productCard.title}
 							image={productCard.image}
@@ -65,6 +70,7 @@ export function ProductsSection() {
 }
 
 type ProductCardProps = {
+	index: number;
 	slug: string;
 	title: string;
 	image: StaticImageData;
@@ -72,18 +78,42 @@ type ProductCardProps = {
 	description: string;
 };
 
-function ProductCard({ slug, title, image, alt, description }: ProductCardProps) {
+function ProductCard({ index, slug, title, image, alt, description }: ProductCardProps) {
+	const productCardRef = useRef(null);
+	const productImageWrapperRef = useRef(null);
+	const isProductCardHovered = useHover(productCardRef);
+	const isProductImageWrapperHovered = useHover(productImageWrapperRef);
+
 	const href = `#products/${slug}`;
+	const key = index.toString().padStart(2, "0");
 
 	return (
-		<li className={style.productCard}>
+		<li
+			className={style.productCard}
+			onMouseEnter={toggleCardHovered}
+			onMouseLeave={toggleCardHovered}
+		>
 			<Link href={href} aria-label={`Open product ${title}`}>
-				<h2>{title}</h2>
-				<div className={style.productImageWrapper}>
-					<Image alt={alt} src={image} placeholder="blur" />
+				<div className={style.productHeader}>
+					<span className={style.productKey}>{key}</span>
+					<span className={style.productKeyLead}></span>
+					<h2 className={style.productTitle}>{title}</h2>
 				</div>
-				<p>{description}</p>
-				<span>Go to product →</span>
+				<div
+					className={style.productImageWrapper}
+					onMouseEnter={(e) =>
+						e.currentTarget.classList.add(style.productImageWrapperHover)
+					}
+					onMouseLeave={(e) =>
+						e.currentTarget.classList.remove(style.productImageWrapperHover)
+					}
+				>
+					<Image alt={alt} src={image} placeholder="blur" fill />
+				</div>
+				<div className={style.productFooter}>
+					<p>{description}</p>
+					<span className={style.goTo}>Go to product →</span>
+				</div>
 			</Link>
 		</li>
 	);
