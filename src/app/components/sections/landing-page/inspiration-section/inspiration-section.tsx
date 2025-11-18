@@ -16,17 +16,26 @@ export function InspirationSection() {
 				</div>
 
 				<div className={style.right}>
-					<h2>Inspiration</h2>
-					<h2>For the love of good</h2>
+					<div className={style.bgPink} />
+					<Image
+						className={style.bgImage}
+						src="/Wave-pattern-black.png"
+						alt="Background"
+						fill
+					/>
+					<div className={style.content}>
+						<h2>Inspiration</h2>
+						<h2>For the love of good</h2>
 
-					<p>
-						Longing to return to the harbour. Longing for your partner to return
-						home. Longing is one of the names we have for love. But when you are
-						longing for something good, you’re not waiting in vain. So for the love
-						of good, we have prepared these tasty fish recipes. All exciting and
-						easy combinations so you don’t have to wait too long. Enjoy.
-					</p>
-					<h3>Explore the babord recipes</h3>
+						<p>
+							Longing to return to the harbour. Longing for your partner to return
+							home. Longing is one of the names we have for love. But when you are
+							longing for something good, you’re not waiting in vain. So for the
+							love of good, we have prepared these tasty fish recipes. All exciting
+							and easy combinations so you don’t have to wait too long. Enjoy.
+						</p>
+						<h3>Explore the babord recipes</h3>
+					</div>
 				</div>
 			</section>
 		</SectionWrapper>

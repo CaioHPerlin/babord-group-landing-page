@@ -1,37 +1,70 @@
 .inspirationSection {
 	display: flex;
 	align-items: stretch;
+	justify-content: center;
 	width: 100%;
-	min-height: 500px;
-	gap: 2rem;
+	min-height: 100vh;
 }
 
 .left {
 	position: relative;
 	flex: 1;
-	min-height: 400px;
+	min-height: 100%;
+	overflow: hidden;
 }
 
 .image {
 	object-fit: cover;
+	scale: 108%;
 }
 
 .right {
+	position: relative;
 	flex: 1;
+	min-height: 100%;
+	overflow: hidden;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	gap: 1rem;
+	align-items: center;
+}
+
+.bgPink {
+	position: absolute;
+	inset: 0;
+	background-color: var(--background-secondary, #ffb6c1);
+	z-index: 0;
+}
+
+.bgImage {
+	position: absolute;
+	inset: 0;
+	object-fit: cover;
+	z-index: 1;
+	opacity: 0.07;
+	scale: 150%;
+}
+
+.content {
+	position: relative;
+	z-index: 2;
 	padding: 2rem;
+	max-width: 620px;
+	color: var(--text-primary);
 }
 
-.right h2 {
-	font-size: 2rem;
-	font-weight: 700;
+.content h2 {
+	font-size: 13px;
+	margin: 0 0 0.5rem 0;
 }
 
-.right p {
+.content p {
 	font-size: 1rem;
 	line-height: 1.6;
-	opacity: 0.8;
+	opacity: 0.95;
+	margin: 0 0 1rem 0;
+}
+
+.content h3 {
+	margin: 0;
+	font-size: 1rem;
+	font-weight: 600;
 }
