@@ -40,6 +40,29 @@ const productCards: ProductCardProps[] = [
 		alt: "Seasoned trout prepared with herbs and lemon slices",
 		description: "Seafood specialties from Babord.",
 	},
+	{
+		title: "Pink fish",
+		slug: "salmon",
+		image: product2Image,
+		alt: "Salmon fish served with vegetables and lemon",
+		description:
+			"Pink fish prepared as fine fillets A-F trim, portions on required specification or blocks of B&P and bellies. Available fresh, frozen or chilled in a variety of packaging options.",
+	},
+	{
+		title: "Breaded fish",
+		slug: "breaded-fish",
+		image: product3Image,
+		alt: "Breaded fish sticks served with lemon and sauce",
+		description:
+			"A varied selection of breaded products including fish fingers, burgers, fish fillets and many more. Available frozen in a variety of packaging options.",
+	},
+	{
+		title: "Babord Specials",
+		slug: "trout",
+		image: product4Image,
+		alt: "Trout fish served with herbs",
+		description: "Seafood specialties from Babord",
+	},
 ];
 
 export default function ProductsSection() {
@@ -76,7 +99,7 @@ function ProductCard({ slug, title, image, alt, description }: ProductCardProps)
 	const href = `#products/${slug}`;
 
 	return (
-		<li>
+		<li className={style.productCard}>
 			<Link href={href} aria-label={`Open product ${title}`}>
 				<h2>{title}</h2>
 				<div className={style.productImageWrapper}>
