@@ -1,4 +1,4 @@
-import SectionWrapper from "../../section-wrapper/section-wrapper";
+import SectionWrapper from "../../../section-wrapper/section-wrapper";
 import style from "./hero-section.module.css";
 
 export default function HeroSection() {
