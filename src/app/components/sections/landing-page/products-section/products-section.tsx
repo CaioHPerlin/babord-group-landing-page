@@ -131,7 +131,7 @@ function ProductCard({
 				</div>
 				<div className={style.productFooter}>
 					<p>{description}</p>
-					<span className={style.goTo}>Go to product →</span>
+					<span className={style.arrow}>Go to product </span>
 				</div>
 			</Link>
 		</li>

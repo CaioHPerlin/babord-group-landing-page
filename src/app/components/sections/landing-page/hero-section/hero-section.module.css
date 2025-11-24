@@ -15,12 +15,12 @@
 }
 
 .content h3 {
-    font-family: var(--font-bluu);
-    margin-top: 15px;
-    color:var(--text-quaternary);
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 700;
+	font-family: var(--font-bluu);
+	margin-top: 15px;
+	color: var(--text-quarternary);
+	text-decoration: none;
+	font-size: 15px;
+	font-weight: 700;
 }
 
 .title {

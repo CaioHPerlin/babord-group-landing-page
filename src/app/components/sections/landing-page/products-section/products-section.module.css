@@ -119,13 +119,6 @@
 	font-size: 14px;
 }
 
-.goTo {
-	transition-delay: 0.1s;
-	color: var(--background-secondary);
-	font-family: var(--font-bluu);
-	font-weight: 500;
-}
-
 .wavePatternWrapper {
 	position: absolute;
 	top: calc(60px + (310px / 2));
@@ -140,4 +133,37 @@
 
 .wavePatternWrapper img {
 	object-fit: none;
+}
+
+.arrow {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+	color: var(--background-secondary);
+	transition-delay: 0.1s;
+	font-family: var(--font-bluu);
+	font-weight: 500;
+}
+
+.arrow::after {
+	content: "";
+	display: block;
+	opacity: 0.7;
+	width: 55px;
+	height: 2px;
+	background-color: var(--background-secondary);
+	margin-left: 8px;
+}
+
+.arrow::before {
+	content: "";
+	width: 0;
+	opacity: 0.7;
+	height: 0;
+	border-top: 3px solid transparent;
+	border-bottom: 3px solid transparent;
+	border-left: 5px solid var(--background-secondary);
+	position: absolute;
+	right: 4px;
 }
