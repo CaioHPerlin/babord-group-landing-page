@@ -13,7 +13,7 @@ export function InspirationSection() {
 					<Image
 						className={style.image}
 						src={sectionThumbnailImage}
-						alt="Inspiration"
+						alt="Bowl with vegetables and rice"
 						fill
 					/>
 				</div>

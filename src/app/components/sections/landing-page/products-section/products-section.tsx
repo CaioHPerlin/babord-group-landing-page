@@ -53,7 +53,7 @@ const productCards: Omit<
 
 export function ProductsSection() {
 	const [lastHoveredIndex, setLastHoveredIndex] = useState<number>(0);
-	const [mobileOpenIndex, setMobileOpenIndex] = useState<number | null>(null);
+	const [mobileOpenIndex, setMobileOpenIndex] = useState<number>(1);
 
 	return (
 		<SectionWrapper className={style.productsSectionWrapper}>
@@ -76,9 +76,7 @@ export function ProductsSection() {
 							onLastHover={() => setLastHoveredIndex(index + 1)}
 							isMobileOpen={mobileOpenIndex === index + 1}
 							onMobileToggle={() =>
-								setMobileOpenIndex(
-									mobileOpenIndex === index + 1 ? null : index + 1,
-								)
+								setMobileOpenIndex(mobileOpenIndex === index + 1 ? 0 : index + 1)
 							}
 						/>
 					))}
