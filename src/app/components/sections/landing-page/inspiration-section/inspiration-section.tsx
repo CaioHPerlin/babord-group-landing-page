@@ -34,7 +34,7 @@ export function InspirationSection() {
 							love of good, we have prepared these tasty fish recipes. All exciting
 							and easy combinations so you don’t have to wait too long. Enjoy.
 						</p>
-						<h3>Explore the babord recipes</h3>
+						<h3 className={style.arrow}>Explore the babord recipes</h3>
 					</div>
 				</div>
 			</section>
