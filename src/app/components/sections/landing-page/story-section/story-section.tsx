@@ -5,12 +5,17 @@ export function StorySection() {
 	return (
 		<SectionWrapper>
 			<div className={style.imageWrapper}>
-				{/* Usa a imagem em `public/background-story.jpg` conforme solicitado */}
 				<img src="/background-story.jpg" alt="Story background" />
 			</div>
 
 			<section className={style.storySection}>
-				{/* Conteúdo da seção (texto, botões, etc.) pode ser adicionado aqui por você */}
+				<span className={style.title}>An unsung bauta</span>
+
+				<span className={style.subtitle}>A celebrated hero</span>
+
+				<a href="#" className={style.link}>
+					Explore the Babord story
+				</a>
 			</section>
 		</SectionWrapper>
 	);

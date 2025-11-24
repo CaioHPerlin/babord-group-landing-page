@@ -17,7 +17,7 @@
 .content h3 {
     font-family: var(--font-bluu);
     margin-top: 15px;
-    color: #EF7F7A;
+    color:var(--text-quaternary);
     text-decoration: none;
     font-size: 15px;
     font-weight: 700;
