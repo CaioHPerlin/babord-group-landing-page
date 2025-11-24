@@ -9,6 +9,8 @@ import product1Image from "@/app/assets/images/products-section/product-1.jpg";
 import product2Image from "@/app/assets/images/products-section/product-2.jpg";
 import product3Image from "@/app/assets/images/products-section/product-3.jpg";
 import product4Image from "@/app/assets/images/products-section/product-4.jpg";
+import wavePatternImage from "@/app/assets/images/products-section/wave-pattern.png";
+
 import { useRef, useState } from "react";
 import { useHover } from "@/app/hooks/use-hover";
 
@@ -55,6 +57,9 @@ export function ProductsSection() {
 			<section className={style.productsSection}>
 				<h1>Products</h1>
 				<ul>
+					<div className={style.wavePatternWrapper}>
+						<Image src={wavePatternImage} fill alt={"Wave pattern background"} />
+					</div>
 					{productCards.map((productCard, index) => (
 						<ProductCard
 							key={index}

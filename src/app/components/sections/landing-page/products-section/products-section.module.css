@@ -35,6 +35,7 @@
 }
 
 .productsSection ul {
+	position: relative;
 	margin-top: 8vh;
 	list-style: none;
 	width: 100%;
@@ -44,9 +45,6 @@
 }
 
 /* CARDS */
-
-.productCard {
-}
 
 .productImageWrapper {
 	width: auto;
@@ -126,4 +124,20 @@
 	color: var(--background-secondary);
 	font-family: var(--font-bluu);
 	font-weight: 500;
+}
+
+.wavePatternWrapper {
+	position: absolute;
+	top: calc(60px + (310px / 2));
+	/* would end up on the top-left if we didn't account for this: */
+	transform: translateY(-50%);
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 20vh;
+	pointer-events: none;
+}
+
+.wavePatternWrapper img {
+	object-fit: none;
 }
