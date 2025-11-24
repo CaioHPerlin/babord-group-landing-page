@@ -9,7 +9,7 @@ import product1Image from "@/app/assets/images/products-section/product-1.jpg";
 import product2Image from "@/app/assets/images/products-section/product-2.jpg";
 import product3Image from "@/app/assets/images/products-section/product-3.jpg";
 import product4Image from "@/app/assets/images/products-section/product-4.jpg";
-import wavePatternImage from "@/app/assets/images/products-section/wave-pattern.png";
+import wavePatternImage from "@/app/assets/images/wave-pattern.png";
 
 import { useRef, useState } from "react";
 import { useHover } from "@/app/hooks/use-hover";

@@ -2,6 +2,9 @@ import SectionWrapper from "../../../section-wrapper/section-wrapper";
 import style from "./inspiration-section.module.css";
 import Image from "next/image";
 
+import sectionThumbnailImage from "@/app/assets/images/inspiration-section/thumb.jpg";
+import wavePatternImage from "@/app/assets/images/wave-pattern.png";
+
 export function InspirationSection() {
 	return (
 		<SectionWrapper>
@@ -9,7 +12,7 @@ export function InspirationSection() {
 				<div className={style.left}>
 					<Image
 						className={style.image}
-						src="/index-inspiration.jpg"
+						src={sectionThumbnailImage}
 						alt="Inspiration"
 						fill
 					/>
@@ -19,7 +22,7 @@ export function InspirationSection() {
 					<div className={style.bgPink} />
 					<Image
 						className={style.bgImage}
-						src="/Wave-pattern-black.png"
+						src={wavePatternImage}
 						alt="Background"
 						fill
 					/>
