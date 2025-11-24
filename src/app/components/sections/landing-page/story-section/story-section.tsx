@@ -19,7 +19,7 @@ export function StorySection() {
 
 				<span className={style.subtitle}>A celebrated hero</span>
 
-				<a href="#" className={style.link}>
+				<a href="#" className={`${style.link} ${style.arrow}`}>
 					Explore the Babord story
 				</a>
 			</section>
