@@ -14,10 +14,7 @@ import wavePatternImage from "@/app/assets/images/wave-pattern.png";
 import { useRef, useState } from "react";
 import { useHover } from "@/app/hooks/use-hover";
 
-const productCards: Omit<
-	ProductCardProps,
-	"index" | "isLastHovered" | "onLastHover" | "isMobileOpen" | "onMobileToggle"
->[] = [
+const productCards: Omit<ProductCardProps, "index" | "isActive" | "onActivate">[] = [
 	{
 		title: "White fish",
 		slug: "cod",
@@ -52,8 +49,7 @@ const productCards: Omit<
 ];
 
 export function ProductsSection() {
-	const [lastHoveredIndex, setLastHoveredIndex] = useState<number>(0);
-	const [mobileOpenIndex, setMobileOpenIndex] = useState<number>(1);
+	const [activeIndex, setActiveIndex] = useState<number>(1);
 
 	return (
 		<SectionWrapper className={style.productsSectionWrapper}>
@@ -72,12 +68,8 @@ export function ProductsSection() {
 							image={productCard.image}
 							alt={productCard.alt}
 							description={productCard.description}
-							isLastHovered={lastHoveredIndex === index + 1}
-							onLastHover={() => setLastHoveredIndex(index + 1)}
-							isMobileOpen={mobileOpenIndex === index + 1}
-							onMobileToggle={() =>
-								setMobileOpenIndex(mobileOpenIndex === index + 1 ? 0 : index + 1)
-							}
+							isActive={activeIndex === index + 1}
+							onActivate={() => setActiveIndex(index + 1)}
 						/>
 					))}
 				</ul>
@@ -93,10 +85,8 @@ type ProductCardProps = {
 	image: StaticImageData;
 	alt: string;
 	description: string;
-	isLastHovered: boolean;
-	onLastHover: () => void;
-	isMobileOpen: boolean;
-	onMobileToggle: () => void;
+	isActive: boolean;
+	onActivate: () => void;
 };
 
 function ProductCard({
@@ -106,39 +96,33 @@ function ProductCard({
 	image,
 	alt,
 	description,
-	isLastHovered,
-	onLastHover,
-	isMobileOpen,
-	onMobileToggle,
+	isActive,
+	onActivate,
 }: ProductCardProps) {
 	const cardRef = useRef<HTMLLIElement>(null);
 	const imageWrapperRef = useRef<HTMLDivElement>(null);
-	const isCardHovered = useHover(cardRef, { onEnter: onLastHover });
+	const isCardHovered = useHover(cardRef, { onEnter: onActivate });
 	const isImageHovered = useHover(imageWrapperRef);
 
 	const href = `#products/${slug}`;
 	const key = index.toString().padStart(2, "0");
-	const shouldShowCardHover = isCardHovered || isLastHovered;
-	const shouldShowImageHover = isImageHovered || isLastHovered;
+	const shouldShowCardHover = isCardHovered || isActive;
+	const shouldShowImageHover = isImageHovered || isActive;
 
-	const handleMobileClick = (e: React.MouseEvent) => {
-		// Only toggle on mobile
+	const handleClick = (e: React.MouseEvent) => {
+		// Tablets and smaller devices activate on click instead of hover
 		if (window.innerWidth <= 1024) {
 			e.preventDefault();
-			onMobileToggle();
+			onActivate();
 		}
 	};
 
 	return (
 		<li
 			ref={cardRef}
-			className={`${style.productCard} ${shouldShowCardHover ? style.productCardHover : ""} ${isMobileOpen ? style.productCardMobileOpen : ""}`}
+			className={`${style.productCard} ${shouldShowCardHover ? style.productCardHover : ""} ${isActive ? style.productCardMobileOpen : ""}`}
 		>
-			<Link
-				href={href}
-				aria-label={`Open product ${title}`}
-				onClick={handleMobileClick}
-			>
+			<Link href={href} aria-label={`Open product ${title}`} onClick={handleClick}>
 				<div className={style.productHeader}>
 					<span className={style.productKey}>{key}</span>
 					<span className={style.productKeyLead}></span>
