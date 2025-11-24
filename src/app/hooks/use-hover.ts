@@ -1,20 +1,38 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { RefObject } from "react";
 
-export function useHover<T extends HTMLElement = HTMLElement>(
-	elementRef: RefObject<T>,
+type UseHoverOptions = {
+	onEnter?: () => void;
+	onLeave?: () => void;
+};
+
+export function useHover<T extends HTMLElement>(
+	elementRef: RefObject<T | null>,
+	options?: UseHoverOptions,
 ): boolean {
-	const [value, setValue] = useState<boolean>(false);
+	const [isHovered, setIsHovered] = useState<boolean>(false);
 
-	const handleMouseEnter = () => {
-		setValue(true);
-	};
-	const handleMouseLeave = () => {
-		setValue(false);
-	};
+	useEffect(() => {
+		const element = elementRef.current;
+		if (!element) return;
 
-	elementRef.current?.addEventListener("mouseenter", handleMouseEnter);
-	elementRef.current?.addEventListener("mouseleave", handleMouseLeave);
+		const handleMouseEnter = () => {
+			setIsHovered(true);
+			options?.onEnter?.();
+		};
+		const handleMouseLeave = () => {
+			setIsHovered(false);
+			options?.onLeave?.();
+		};
 
-	return value;
+		element.addEventListener("mouseenter", handleMouseEnter);
+		element.addEventListener("mouseleave", handleMouseLeave);
+
+		return () => {
+			element.removeEventListener("mouseenter", handleMouseEnter);
+			element.removeEventListener("mouseleave", handleMouseLeave);
+		};
+	}, [elementRef, options]);
+
+	return isHovered;
 }

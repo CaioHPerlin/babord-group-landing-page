@@ -11,8 +11,7 @@
 	display: flex;
 }
 
-@media print,
-screen and (min-width: 75em) {
+@media print, screen and (min-width: 75em) {
 	.productsSection {
 		padding-right: 1.0416666667rem;
 		padding-left: 1.0416666667rem;
@@ -46,7 +45,8 @@ screen and (min-width: 75em) {
 
 /* CARDS */
 
-.productCard {}
+.productCard {
+}
 
 .productImageWrapper {
 	width: auto;
@@ -80,7 +80,7 @@ screen and (min-width: 75em) {
 	position: absolute;
 	left: -50px;
 	top: 12px;
-	content: '';
+	content: "";
 	width: 30px;
 	height: 1px;
 	background: #979797;
@@ -108,12 +108,12 @@ screen and (min-width: 75em) {
 	gap: 40px;
 }
 
-.productFooter>* {
+.productFooter > * {
 	opacity: 0;
 	transition: all 0.3s ease;
 }
 
-.productCard:hover .productFooter>* {
+.productCardHover .productFooter > * {
 	opacity: 1;
 }
 
