@@ -15,9 +15,9 @@ export function StorySection() {
 			</div>
 
 			<section className={style.storySection}>
-				<span className={style.title}>An unsung bauta</span>
+				<h1 className={style.title}>An unsung bauta</h1>
 
-				<span className={style.subtitle}>A celebrated hero</span>
+				<h2 className={style.subtitle}>A celebrated hero</h2>
 
 				<a href="#" className={`${style.link} ${style.arrow}`}>
 					Explore the Babord story
