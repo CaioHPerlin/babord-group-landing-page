@@ -1,0 +1,143 @@
+.productsSectionWrapper {
+	background-color: var(--background-primary);
+}
+
+.productsSection {
+	max-width: 1640px;
+	margin: 0 auto;
+	height: 100%;
+	padding-top: 100px;
+	padding-bottom: 80px;
+	display: flex;
+}
+
+@media print, screen and (min-width: 75em) {
+	.productsSection {
+		padding-right: 1.0416666667rem;
+		padding-left: 1.0416666667rem;
+	}
+}
+
+@media screen and (max-width: 1800px) {
+	.productsSection {
+		padding-left: calc(180px + 1.04rem);
+		padding-right: calc(180px + 1.04rem);
+	}
+}
+
+.productsSection h1 {
+	font-family: var(--font-bluu);
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--background-light);
+	position: absolute;
+	top: 55px;
+}
+
+.productsSection ul {
+	position: relative;
+	margin-top: 8vh;
+	list-style: none;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(4, 20%);
+	column-gap: 5%;
+}
+
+/* CARDS */
+
+.productImageWrapper {
+	width: auto;
+	height: 100%;
+	max-height: 310px;
+	position: relative;
+}
+
+.productImageWrapper img {
+	opacity: 70%;
+	object-fit: contain;
+	transition: all 0.3s ease;
+}
+
+.productHeader {
+	position: relative;
+	margin-left: 85px;
+	margin-bottom: 60px;
+}
+
+.productKey {
+	font-family: var(--font-bluu);
+	position: absolute;
+	left: -80px;
+	top: 0;
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+.productKeyLead {
+	position: absolute;
+	left: -50px;
+	top: 12px;
+	content: "";
+	width: 30px;
+	height: 1px;
+	background: #979797;
+}
+
+.productTitle {
+	font-family: var(--font-bluu);
+	font-size: 1.5vw;
+	line-height: 24px;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+.productImageWrapperHover img {
+	opacity: 100%;
+	transform: scale(1.1);
+}
+
+.productFooter {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin: 0 75px;
+	margin-top: 60px;
+	gap: 40px;
+}
+
+.productFooter > * {
+	opacity: 0;
+	transition: all 0.3s ease;
+}
+
+.productCardHover .productFooter > * {
+	opacity: 1;
+}
+
+.productCard p {
+	font-size: 14px;
+}
+
+.goTo {
+	transition-delay: 0.1s;
+	color: var(--background-secondary);
+	font-family: var(--font-bluu);
+	font-weight: 500;
+}
+
+.wavePatternWrapper {
+	position: absolute;
+	top: calc(60px + (310px / 2));
+	/* would end up on the top-left if we didn't account for this: */
+	transform: translateY(-50%);
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 20vh;
+	pointer-events: none;
+}
+
+.wavePatternWrapper img {
+	object-fit: none;
+}
