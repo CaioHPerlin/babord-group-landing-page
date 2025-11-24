@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionWrapper from "../../../section-wrapper/section-wrapper";
 import style from "./story-section.module.css";
 
@@ -5,7 +6,12 @@ export function StorySection() {
 	return (
 		<SectionWrapper>
 			<div className={style.imageWrapper}>
-				<img src="/background-story.jpg" alt="Story background" />
+				<Image
+					src="/background-story.jpg"
+					width={2816}
+					height={1760}
+					alt="Story background"
+				/>
 			</div>
 
 			<section className={style.storySection}>

@@ -1,43 +1,44 @@
 .storySection {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: inherit;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: inherit;
 }
 
 .title {
-    font-family: var(--font-bluu);
-    color: var(--text-secondary);
-    display: block;
-    font-size: 60px;
-    font-weight: 500;
-    margin: 0;
-    line-height: 1;
+	font-family: var(--font-bluu);
+	color: var(--text-secondary);
+	display: block;
+	font-size: 60px;
+	font-weight: 500;
+	margin: 0;
+	line-height: 1;
 }
 .subtitle {
-    font-family: var(--font-bluu);
-    font-size: 24px;
-    line-height: 1.2;
-    margin-top: 16px;;
-    color:var(--text-inverse-light)
+	font-family: var(--font-bluu);
+	font-size: 24px;
+	line-height: 1.2;
+	margin-top: 16px;
+	color: var(--text-inverse-light);
 }
 .link {
-    font-family: var(--font-bluu);
-
+	font-family: var(--font-bluu);
 }
 
 .imageWrapper {
-    height: 100%;
-    width: 100%;
-    transform: scale(1.1);
-    transform-origin: center center;
-    overflow: hidden;
-    position: absolute;
-    z-index: -20;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -20;
+	transform: scale(1.1);
+	transform-origin: center left;
 }
 
 .imageWrapper img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
 }
