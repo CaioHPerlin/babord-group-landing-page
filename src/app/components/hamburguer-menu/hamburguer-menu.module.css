@@ -11,6 +11,7 @@
 	justify-content: space-between;
 	background: transparent;
 	z-index: 50;
+	pointer-events: none;
 
 	img:hover {
 		cursor: pointer;
