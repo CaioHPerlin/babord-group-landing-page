@@ -15,4 +15,17 @@
 	img:hover {
 		cursor: pointer;
 	}
+
+	@media (max-width: 1024px) {
+		width: 100vw;
+		height: auto;
+		flex-direction: row;
+		padding: 1.5rem 1.5rem;
+	}
+}
+
+.footerLogo {
+	@media (max-width: 1024px) {
+		display: none;
+	}
 }
