@@ -3,6 +3,8 @@ import style from "./about-section.module.css";
 import Image from "next/image";
 
 import backgroundImage from "@/app/assets/images/about-section/background.jpg";
+import { motion } from "motion/react";
+import { ANIMATIONS } from "@/app/utils/constants";
 
 export function AboutSection() {
 	return (
@@ -13,15 +15,46 @@ export function AboutSection() {
 			<section className={style.aboutSection}>
 				<h1>About</h1>
 				<div className={style.main}>
-					<p className={style.mainText}>
+					<motion.p
+						initial={{ x: -50, opacity: 0 }}
+						whileInView={{ x: 0, opacity: 1 }}
+						viewport={{ once: true, amount: 0.2 }}
+						transition={{
+							duration: ANIMATIONS.DURATION.DEFAULT,
+							delay: ANIMATIONS.DELAY.DEFAULT * 0,
+							ease: "easeOut",
+						}}
+						className={style.mainText}
+					>
 						Trust, traceability, tradition – this trinity ensures we always deliver
 						superior Norwegian seafood, responsibly harvested and carefully
 						processed, from harbour to home.
-					</p>
-					<a className={style.arrow} href="#">
+					</motion.p>
+					<motion.a
+						initial={{ x: -50, opacity: 0 }}
+						whileInView={{ x: 0, opacity: 1 }}
+						viewport={{ once: true, amount: 0.2 }}
+						transition={{
+							duration: ANIMATIONS.DURATION.DEFAULT,
+							delay: ANIMATIONS.DELAY.DEFAULT * 0,
+							ease: "easeOut",
+						}}
+						className={style.arrow}
+						href="#"
+					>
 						Explore the babord brand
-					</a>
-					<div className={style.info}>
+					</motion.a>
+					<motion.div
+						initial={{ x: 50, opacity: 0 }}
+						whileInView={{ x: 0, opacity: 1 }}
+						viewport={{ once: true, amount: 0.2 }}
+						transition={{
+							duration: ANIMATIONS.DURATION.DEFAULT,
+							delay: ANIMATIONS.DELAY.DEFAULT * 0,
+							ease: "easeOut",
+						}}
+						className={style.info}
+					>
 						<p>
 							Visit us at
 							<br />
@@ -36,7 +69,7 @@ export function AboutSection() {
 							<br />
 							<a href="mailto:office@babord.no">office@babord.no</a>
 						</p>
-					</div>
+					</motion.div>
 				</div>
 			</section>
 		</SectionWrapper>
