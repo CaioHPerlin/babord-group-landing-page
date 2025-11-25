@@ -36,6 +36,8 @@ h1 {
 }
 
 img {
+	pointer-events: none;
+	-webkit-user-drag: none !important;
 	user-select: none;
 }
 
