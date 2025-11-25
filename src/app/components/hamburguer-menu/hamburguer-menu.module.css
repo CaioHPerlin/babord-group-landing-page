@@ -11,8 +11,22 @@
 	justify-content: space-between;
 	background: transparent;
 	z-index: 50;
+	pointer-events: none;
 
 	img:hover {
 		cursor: pointer;
+	}
+
+	@media screen and (max-width: 1024px) {
+		width: 100vw;
+		height: auto;
+		flex-direction: row;
+		padding: 1.5rem 1.5rem;
+	}
+}
+
+.footerLogo {
+	@media screen and (max-width: 1024px) {
+		display: none;
 	}
 }
