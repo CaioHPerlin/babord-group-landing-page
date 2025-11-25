@@ -5,6 +5,7 @@ import SectionWrapper from "../../../section-wrapper/section-wrapper";
 import style from "./story-section.module.css";
 import { motion, useMotionValue, animate } from "motion/react";
 import { useState, useEffect } from "react";
+import { ANIMATIONS } from "@/app/utils/constants";
 
 export function StorySection() {
 	const [isRightSide, setIsRightSide] = useState(false);
@@ -28,27 +29,27 @@ export function StorySection() {
 		const threshold = 20;
 		const currentX = x.get();
 
-		// If dragging left (negative) from left side, go to right
+		// drag from left side
 		if (currentX < -threshold && !isRightSide) {
 			animate(x, -window.innerWidth * 2, {
 				duration: 1.5,
-				ease: [0.42, 0, 0.58, 1], // ease-in-out
+				ease: "easeInOut",
 				onComplete: () => setIsRightSide(true),
 			});
 		}
-		// If dragging right (positive) from right side, go back to left
+		// drag from right side
 		else if (currentX > -window.innerWidth * 2 + threshold && isRightSide) {
 			animate(x, 0, {
 				duration: 1.5,
-				ease: [0.42, 0, 0.58, 1], // ease-in-out
+				ease: "easeInOut",
 				onPlay: () => setIsRightSide(false),
 			});
 		}
-		// Snap back to current position
+		// snap back to position
 		else {
 			animate(x, isRightSide ? -window.innerWidth * 2 : 0, {
 				duration: 0.5,
-				ease: [0.42, 0, 0.58, 1], // ease-in-out
+				ease: "easeInOut",
 			});
 		}
 	};
@@ -65,13 +66,48 @@ export function StorySection() {
 			</motion.div>
 
 			<motion.section className={style.storySection} style={{ x: isMobile ? x : 0 }}>
-				<h1 className={style.title}>An unsung bauta</h1>
+				<motion.h1
+					initial={{ x: 50, opacity: 0 }}
+					whileInView={{ x: 0, opacity: 1 }}
+					viewport={{ once: true, amount: 0.2 }}
+					transition={{
+						duration: ANIMATIONS.DURATION.DEFAULT,
+						delay: ANIMATIONS.DELAY.DEFAULT * 0,
+						ease: "easeOut",
+					}}
+					className={style.title}
+				>
+					An unsung bauta
+				</motion.h1>
 
-				<h2 className={style.subtitle}>A celebrated hero</h2>
+				<motion.h2
+					initial={{ x: -50, opacity: 0 }}
+					whileInView={{ x: 0, opacity: 1 }}
+					viewport={{ once: true, amount: 0.2 }}
+					transition={{
+						duration: ANIMATIONS.DURATION.DEFAULT,
+						delay: ANIMATIONS.DELAY.DEFAULT * 1,
+						ease: "easeOut",
+					}}
+					className={style.subtitle}
+				>
+					A celebrated hero
+				</motion.h2>
 
-				<a href="#" className={`${style.link} ${style.arrow}`}>
+				<motion.a
+					initial={{ x: 50, opacity: 0 }}
+					whileInView={{ x: 0, opacity: 1 }}
+					viewport={{ once: true, amount: 0.2 }}
+					transition={{
+						duration: ANIMATIONS.DURATION.DEFAULT,
+						delay: ANIMATIONS.DELAY.DEFAULT * 2,
+						ease: "easeOut",
+					}}
+					href="#"
+					className={`${style.link} ${style.arrow}`}
+				>
 					Explore the Babord story
-				</a>
+				</motion.a>
 			</motion.section>
 			<motion.span
 				className={style.swipeArrow}
@@ -96,7 +132,7 @@ export function StorySection() {
 					className={style.dragOverlay}
 					drag="x"
 					dragConstraints={dragConstraints}
-					dragElastic={0.1}
+					dragElastic={0}
 					onDrag={(_event, info) => {
 						const newX = isRightSide
 							? -window.innerWidth * 2 + info.offset.x
