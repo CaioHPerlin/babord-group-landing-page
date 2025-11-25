@@ -69,7 +69,7 @@ export function StorySection() {
 				<motion.h1
 					initial={{ x: 50, opacity: 0 }}
 					whileInView={{ x: 0, opacity: 1 }}
-					viewport={{ once: true, amount: 0.2 }}
+					viewport={{ once: true, amount: 0.8 }}
 					transition={{
 						duration: ANIMATIONS.DURATION.DEFAULT,
 						delay: ANIMATIONS.DELAY.DEFAULT * 0,
@@ -83,7 +83,7 @@ export function StorySection() {
 				<motion.h2
 					initial={{ x: -50, opacity: 0 }}
 					whileInView={{ x: 0, opacity: 1 }}
-					viewport={{ once: true, amount: 0.2 }}
+					viewport={{ once: true, amount: 0.8 }}
 					transition={{
 						duration: ANIMATIONS.DURATION.DEFAULT,
 						delay: ANIMATIONS.DELAY.DEFAULT * 1,
@@ -97,7 +97,7 @@ export function StorySection() {
 				<motion.a
 					initial={{ x: 50, opacity: 0 }}
 					whileInView={{ x: 0, opacity: 1 }}
-					viewport={{ once: true, amount: 0.2 }}
+					viewport={{ once: true, amount: 0.8 }}
 					transition={{
 						duration: ANIMATIONS.DURATION.DEFAULT,
 						delay: ANIMATIONS.DELAY.DEFAULT * 2,
