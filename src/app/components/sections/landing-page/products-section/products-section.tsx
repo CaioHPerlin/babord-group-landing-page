@@ -13,6 +13,8 @@ import wavePatternImage from "@/app/assets/images/wave-pattern.png";
 
 import { useRef, useState } from "react";
 import { useHover } from "@/app/hooks/use-hover";
+import { motion } from "motion/react";
+import { ANIMATIONS } from "@/app/utils/constants";
 
 const productCards: Omit<ProductCardProps, "index" | "isActive" | "onActivate">[] = [
 	{
@@ -118,9 +120,17 @@ function ProductCard({
 	};
 
 	return (
-		<li
+		<motion.li
 			ref={cardRef}
 			className={`${style.productCard} ${shouldShowCardHover ? style.productCardHover : ""} ${isActive ? style.productCardMobileOpen : ""}`}
+			initial={{ opacity: 0, x: -50, y: 0 }}
+			whileInView={{ opacity: 1, x: 0, y: 0 }}
+			viewport={{ once: true, amount: 0.2 }}
+			transition={{
+				duration: ANIMATIONS.DURATION.DEFAULT,
+				delay: (index - 1) * ANIMATIONS.DELAY.DEFAULT,
+				ease: "easeInOut",
+			}}
 		>
 			<Link href={href} aria-label={`Open product ${title}`} onClick={handleClick}>
 				<div className={style.productHeader}>
@@ -141,6 +151,6 @@ function ProductCard({
 					<span className={style.arrow}>Go to product </span>
 				</div>
 			</Link>
-		</li>
+		</motion.li>
 	);
 }
