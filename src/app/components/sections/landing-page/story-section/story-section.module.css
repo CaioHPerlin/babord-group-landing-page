@@ -7,6 +7,12 @@
 	width: 100%;
 	max-width: 1640px;
 	margin: 0 auto;
+
+	@media screen and (max-width: 1024px) {
+		top: 25%;
+		display: grid;
+		grid-template-columns: 100vw 100vw;
+	}
 }
 
 .storySection > h1,
@@ -16,17 +22,32 @@
 	font-size: 60px;
 	font-weight: 600;
 	line-height: 1;
+
+	@media screen and (max-width: 1024px) {
+		font-size: 25px;
+		font-weight: 600;
+		line-height: 1.2;
+		width: 100vw;
+	}
 }
 
 .title {
 	margin-left: -25%;
 	color: var(--text-secondary);
+
+	@media screen and (max-width: 1024px) {
+		margin: 0;
+	}
 }
 
 .subtitle {
 	margin-top: 20px;
 	margin-right: -25%;
 	color: var(--background-primary);
+
+	@media screen and (max-width: 1024px) {
+		margin: 0;
+	}
 }
 
 .link {
@@ -51,6 +72,12 @@
 	z-index: -20;
 	transform: scale(1.1);
 	transform-origin: center left;
+
+	@media screen and (max-width: 1024px) {
+		transform: scale(1);
+		width: 300vw;
+		height: 100vh;
+	}
 }
 
 .imageWrapper img {
@@ -64,6 +91,9 @@
 	display: inline-flex;
 	align-items: center;
 	cursor: pointer;
+	@media screen and (max-width: 1024px) {
+		display: none;
+	}
 }
 
 .arrow::after {
@@ -86,4 +116,79 @@
 	border-left: 5px solid var(--text-primary);
 	position: absolute;
 	right: -2px;
+}
+
+.arrowSmall {
+	display: none;
+
+	@media screen and (max-width: 1024px) {
+		/* display: inline-flex; */
+	}
+
+	position: absolute;
+	bottom: 40px;
+	right: 5rem;
+	align-items: center;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.arrowSmall::after {
+	content: "";
+	display: block;
+	opacity: 0.2;
+	width: 55px;
+	height: 2px;
+	background-color: var(--text-primary);
+	margin-left: 8px;
+}
+
+.arrowSmall::before {
+	content: "";
+	width: 0;
+	opacity: 0.2;
+	height: 0;
+	border-top: 3px solid transparent;
+	border-bottom: 3px solid transparent;
+	border-left: 5px solid var(--text-primary);
+	position: absolute;
+	right: -2px;
+}
+
+.swipeArrow {
+	display: none;
+
+	@media screen and (max-width: 1024px) {
+		display: inline-flex;
+	}
+
+	position: absolute;
+	opacity: 0.5;
+	bottom: 40px;
+	left: 5rem;
+	align-items: center;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.swipeArrow::after {
+	content: "";
+	display: block;
+	background-color: var(--text-primary);
+	opacity: 0.5;
+	width: 55px;
+	height: 2px;
+	margin-left: 8px;
+}
+
+.swipeArrow::before {
+	content: "";
+	width: 0;
+	opacity: 0.5;
+	height: 0;
+	border-top: 3px solid transparent;
+	border-bottom: 3px solid transparent;
+	border-left: 5px solid var(--text-primary);
+	position: absolute;
+	left: 101px;
 }

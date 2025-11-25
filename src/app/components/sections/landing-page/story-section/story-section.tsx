@@ -23,6 +23,10 @@ export function StorySection() {
 					Explore the Babord story
 				</a>
 			</section>
+			<span className={style.swipeArrow}>Swipe</span>
+			<a href="#" className={`${style.link} ${style.arrowSmall}`}>
+				Explore the Babord story
+			</a>
 		</SectionWrapper>
 	);
 }
