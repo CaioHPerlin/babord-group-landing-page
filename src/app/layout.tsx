@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-	title: "Teclados",
-	description: "Teclados mecânicos e magnéticos personalizados e de alta qualidade.",
+	title: "Babord Group - Harbour to home",
+	description: "Babord Group landing page",
 };
 
 export default function RootLayout({
